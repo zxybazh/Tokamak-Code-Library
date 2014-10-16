@@ -1,0 +1,189 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage{calc}
+
+\setlength{\topmargin}{-1in + 16pt}  % 页眉以上
+\setlength{\headheight}{13pt}        % 页眉
+\setlength{\headsep}{3pt}            % 页眉到正文
+\setlength{\footskip}{0pt}           % 页脚
+\setlength{\textheight}{\paperheight -1in-30pt}
+
+\setlength{\oddsidemargin}{-1in + 24pt}
+\setlength{\textwidth}{\paperwidth - 24pt - 20pt}
+
+\usepackage{caption}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{booktabs}
+
+\usepackage{multicol}
+\columnseprule=0.4pt
+
+\usepackage{fancyhdr}
+\lhead{Fudan University}
+\rhead{\thepage}
+\cfoot{}
+
+\usepackage{paralist}
+\setlength{\leftmargin}{0cm}
+
+\usepackage[slantfont]{xeCJK}
+% \setCJKmainfont[BoldFont=Adobe Heiti Std,ItalicFont=Adobe Kaiti Std]{Adobe Song Std}
+% \setCJKsansfont{Adobe Heiti Std}
+% \setCJKmonofont{Adobe Fangsong Std}
+\setCJKmainfont[BoldFont=SourceHanSansCN-Medium, ItalicFont=SourceHanSansCN-Medium]{SourceHanSansCN-Medium}
+\setCJKsansfont{SourceHanSansCN-Medium}
+\setCJKmonofont{SourceHanSansCN-Medium}
+
+\usepackage{listings}
+\DeclareCaptionFont{capcolor}{\color{BlueViolet}}
+\DeclareCaptionFormat{listing}{\colorbox{White}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=capcolor,textfont=capcolor,skip=0pt}
+\lstset{
+  language=C++,
+  xleftmargin = 12pt,
+  xrightmargin = 0pt,
+  aboveskip = 0pt,
+  basicstyle = \ttfamily\mdseries\footnotesize,       % the size of the fonts that are used for the code
+  escapeinside={(*@}{@*)},
+  numbers=left,                   % where to put the line-numbers
+  numberstyle=\tiny\color[RGB]{43, 145, 175},  % the style that is used for the line-numbers
+  numbersep=5pt,                  % how far the line-numbers are from the code
+  frame=trbl,                     % adds a frame around the code
+  rulecolor=\color{black},        % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. commens (green here))
+  tabsize=2,                      % sets default tabsize to 2 spaces
+  breaklines=true,                % sets automatic line breaking
+  breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+                                  % also try caption instead of title
+  keywordstyle=\bfseries\color{blue},          % keyword style
+  commentstyle=\slshape\scriptsize\color[RGB]{0, 100, 0},       % comment style
+  stringstyle=\color[RGB]{163, 21, 21},         % string literal style
+  extendedchars = true,
+  morekeywords={*,...}               % if you want to add more keywords to the set
+}
+
+\setcounter{tocdepth}{2}
+\newcommand{\md}{\mathrm{d}}
+\newcommand{\me}{\mathrm{e}}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{4cm}
+
+{\LARGE ACM-ICPC 2014-2015}
+
+\vspace*{1cm}
+
+\textsc{\Huge Reference Document}
+
+\vspace*{3cm}
+
+\textbf{\Huge Fudan University}
+
+\vspace*{1cm}
+
+\textbf{\huge Tokamak}
+
+\vspace*{2cm}
+
+{\Large
+\begin{tabular}{cp{1in}c}
+\rule{0pt}{16pt} \textbf{Coach} & & \textbf{教练} \\
+\midrule
+\rule{0pt}{16pt} Weiwei Sun & & 孙未未 \\
+\\
+\\
+\rule{0pt}{16pt} \textbf{Contestant} & & \textbf{队员} \\
+\midrule
+\rule{0pt}{16pt} XiYou Zhou & & 周西友 \\
+\rule{0pt}{16pt} ZhengZhong Jin & & 金正中 \\
+\rule{0pt}{16pt} ZhiHao Ma & & 马志豪 \\
+\end{tabular}
+}
+
+\vspace*{4cm}
+
+{\large\today}
+
+\end{center}
+\end{titlepage}
+
+\pagestyle{empty}
+
+\input{cover}
+\newpage
+
+\begin{multicols}{2}
+\small
+\tableofcontents
+\normalsize
+\end{multicols}
+\newpage
+
+\pagestyle{fancy}
+\setcounter{page}{1}
+
+	\section{Checker}
+	\lstinputlisting{./dp.sh}
+	\section{Vimrc}
+	\lstinputlisting{./vimrc.sh}
+	\section{Extended GCD}
+	\lstinputlisting{./extended_gcd.cpp}
+	\section{LCA\_RMQ}
+	\lstinputlisting{./LCA_RMQ.cpp}
+	\section{Chairman Tree\_COT}
+	\lstinputlisting{./Chmtree.cpp}
+	\section{C(n,m)\%p}
+	\lstinputlisting{./cnm.cpp}
+	\section{Chinese reminder theorem}
+	\lstinputlisting{./crm.cpp}
+	\section{Euler function 1}
+	\lstinputlisting{./euler1.cpp}
+	\section{Euler function 2}
+	\lstinputlisting{./euler2.cpp}
+	\section{FFT MUL}
+	\lstinputlisting{./fft.cpp}
+	\section{Heap}
+	\lstinputlisting{./heap.cpp}
+	\section{Fenwick find Kth}
+	\lstinputlisting{./kth_fenwick.cpp}
+	\section{Miller Rabin}
+	\lstinputlisting{./miller_rabin.cpp}
+	\section{Saffix Array}
+	\lstinputlisting{./sa.cpp}
+	\section{Matrix}
+	\lstinputlisting{./matrix.cpp}
+	\section{Min Cost Flow}
+	\lstinputlisting{./mcf_spfa.cpp}
+	\section{Splay}
+	\lstinputlisting{./splay.cpp}
+	\section{Treap}
+	\lstinputlisting{./treap.cpp}
+	\section{Dinic}
+	\lstinputlisting{./dinic.cpp}
+	\section{HK}
+	\lstinputlisting{./HK.cpp}
+	\section{KM}
+	\lstinputlisting{./KM.cpp}
+	\section{Tarjan SCC}
+	\lstinputlisting{./Tarjan_scc.cpp}
+	\section{Ac Automation}
+	\lstinputlisting{./AcATM.cpp}
+	\section{EX-KMP}
+	\lstinputlisting{./exkmp.h}
+	\section{YPJ-FFT}
+	\lstinputlisting{./fft.cpp}
+	\section{DC3}
+	\lstinputlisting{./dc3.h}
+	\section{Divide tree}
+	\lstinputlisting{./divide_tree.h}
+\begin{multicols}{2}
+\input{note}
+\input{code_docu}
+\end{multicols}
+
+\end{document} 
