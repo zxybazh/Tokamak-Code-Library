@@ -32,12 +32,12 @@ struct Arc
  
 inline void insert(int start, int finish, int cap)
 {
-    adj[start] = new Arc(finish, cap, adj[start]);
-    adj[finish] = new Arc(start, cap, adj[finish]); //directed
+    *Nptr = Arc(finish, cap, adj[start]); adj[start]  = Nptr++;
+  	 *Nptr = Arc(start,  0, adj[finish]);  adj[finish] = Nptr++;
     adj[start]->rev = adj[finish];
     adj[finish]->rev = adj[start];
 }
- 
+
 Queue < int, MAXV > q; int dis[MAXV]; bool v[MAXV];
 inline bool bfs()
 {
